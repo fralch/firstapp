@@ -1,3 +1,5 @@
+import {IsString} from 'class-validator'; 
+
 enum EstadoTarea {
   PENDIENTE = 'PENDIENTE',
   EN_PROGRESO = 'EN_PROGRESO',
@@ -6,6 +8,8 @@ enum EstadoTarea {
 
 class Tarea {
   id: string;
+  
+  @IsString()
   titulo: string;
   descripcion: string;
   estado: EstadoTarea;
